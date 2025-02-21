@@ -1,9 +1,12 @@
 from PIL import Image
 import PIL
 import numpy as np
+import os
   
 # Import an image from directory: 
-DIR = "/media/ansel/Windows/Users/araus/Programming/WINTER2024/Modeling/heatmaps/test.png"
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+DIR = current_directory + "/test.png"
 input_image = Image.open(DIR) 
 
 # Extracting pixel map: 

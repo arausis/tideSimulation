@@ -3,10 +3,13 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import PIL
 import numpy as np
-DIR = "/media/ansel/Windows/Users/araus/Programming/WINTER2024/Modeling/heatmaps/eflowcropped.png"
-DIR2= "/media/ansel/Windows/Users/araus/Programming/WINTER2024/Modeling/heatmaps/nflowcropped.png"
-#DIR = "/media/ansel/Windows/Users/araus/Programming/WINTER2024/Modeling/heatmaps/test.png"
-#DIR2= "/media/ansel/Windows/Users/araus/Programming/WINTER2024/Modeling/heatmaps/test.png"
+import os
+
+current_directory = os.path.dirname(os.path.abspath(__file__))
+DIR = current_directory + "/heatmaps/eflowcropped.png"
+DIR2 = current_directory + "/heatmaps/nflowcropped.png"
+
+
 
 def colorscale(r):
     return ((r * 0.012465) - 1.27)
@@ -40,7 +43,6 @@ def get_tides(d):
 
 # use input_image.show() to see the image on the 
 # output screen. 
-
 
 def simulate_flow(start_x, start_y, u, v, num_steps, dt):
     trajectories = []
